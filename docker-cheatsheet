@@ -1,0 +1,45 @@
+BUILD CONTAINER
+    docker build -t container-name .
+
+LIST CREATED CONTAINERS
+    docker images
+
+VIEW CONTAINER STATUSES
+    docker ps
+    docker ps -a
+
+VIEW CONTAINER IN JSON FORM
+    docker inspect container-name
+
+EXECUTE CONTAINER NORMALLY
+    docker run container-name
+
+RUN INTERACTIVE CONTAINER
+    docker run -it container-name
+
+RUN CONTAINER IN BACKGROUND
+    docker run -d container-name
+
+ENGAGE BACKGROUND CONTAINER
+    docker attach container-id
+
+KILL RUNNING CONTAINER
+    docker stop container-name
+
+DELETE A CONTAINER
+    docker rm container-name
+
+DELETE ALL CONTAINERS
+    docket container prune
+
+DELETE IMAGE
+    docker rmi image-name
+
+RUN CONTAINER WITH REDIRECTED PORT
+    docker run -p HOST_PORT:CONTAINER_PORT container-name
+
+RUN WITH VIRTUALLY MOUNTED DRIVE -- USE ABSOLUTE PATHS OR PWD
+    docker run -v HOST_DIR:CONTAINER_DIR container-name
+
+RUN WITH ENVIRONMENT VARIABLES
+    docker run -e VAR_NAME=value container-name

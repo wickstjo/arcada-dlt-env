@@ -1,0 +1,31 @@
+# START WITH AN UBUNTU BASE -- ARE THERE BETTER OPTIONS?
+FROM ubuntu
+
+# UPDATE APT-REG
+RUN apt-get update -y
+
+# INSTALL PRE-REQUISIT FOR ADD-APT
+RUN apt-get install -y software-properties-common
+
+# ADD GETH REPO TO APT-REG
+RUN add-apt-repository -y ppa:ethereum/ethereum
+
+# INSTALL GETH
+RUN apt-get install -y ethereum
+
+# LAUNCH GETH OVER WEBSOCKET
+CMD geth \
+    --networkid 4224 \
+    --mine \
+    --miner.threads 2 \
+    --datadir "/resources" \
+    --nodiscover \
+    --ws \
+    --ws.port 8888 \
+    --ws.origins "*" \
+    --nat "any" \
+    --ws.api eth,net,rpc,web3 \
+    --unlock 0 \
+    --password "/resources/password.sec" \
+    --allow-insecure-unlock \
+    --ipcpath "~/.ethereum/geth.ipc"
