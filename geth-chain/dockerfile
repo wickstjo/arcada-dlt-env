@@ -13,15 +13,18 @@ RUN add-apt-repository -y ppa:ethereum/ethereum
 # INSTALL GETH
 RUN apt-get install -y ethereum
 
+# COPY OVER THE BLOCKCHAIN RESOURCES
+ADD resources resources
+
 # LAUNCH GETH OVER WEBSOCKET
 CMD geth \
     --networkid 4224 \
     --mine \
-    --miner.threads 2 \
+    --miner.threads 1 \
     --datadir "/resources" \
     --nodiscover \
     --ws \
-    --ws.port 8888 \
+    --ws.port 8545 \
     --ws.origins "*" \
     --nat "any" \
     --ws.api eth,net,rpc,web3 \

@@ -12,4 +12,4 @@ RUN apt-get install npm -y
 RUN npm install -g ganache-cli
 
 # LAUNCH GETH OVER WEBSOCKET
-CMD ganache-cli --port 8888 --secure --unlock 0
+CMD ganache-cli --port 8545 --secure --unlock 0
