@@ -1,0 +1,15 @@
+# START WITH AN UBUNTU BASE
+FROM ubuntu
+
+# UPDATE APT-REG
+RUN apt update -y
+
+# INSTALL NODEJS & NPM
+RUN apt install nodejs -y
+RUN apt install npm -y
+
+# INSTALL GANACHE -- AN IN-MEMORY BLOCKCHAIN
+RUN npm install -g ganache-cli
+
+# LAUNCH GETH OVER WEBSOCKET
+CMD ganache-cli --port 8545 --deterministic --secure --unlock 0

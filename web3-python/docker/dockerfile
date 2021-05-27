@@ -1,4 +1,4 @@
-# START WITH AN UBUNTU BASE -- ARE THERE BETTER OPTIONS?
+# START WITH AN UBUNTU BASE
 FROM ubuntu
 
 # UPDATE APT-REG
@@ -18,7 +18,7 @@ RUN pip3 install web3
 RUN pip3 install nbimporter
 
 # GOTO VIRTUAL WORK DIR
-WORKDIR /notebooks
+WORKDIR /projects
 
 # LAUNCH GETH OVER WEBSOCKET
 CMD jupyter notebook \
