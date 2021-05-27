@@ -1,1 +1,5 @@
+# IGNORE JUPYTER NOTEBOOK CHECKPOINTS
 *.ipynb_checkpoints
+
+# IGNORE NODEJS MODULES
+*node_modules

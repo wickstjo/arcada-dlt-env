@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/main.woff');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: rgb(56, 56, 56);
+    background-image: url('../images/bg.png');
+    font: 13px 'Open Sans', verdana;
+    color: #d1d1d1;
+}
+
+a {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
