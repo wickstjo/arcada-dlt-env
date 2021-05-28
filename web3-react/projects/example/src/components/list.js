@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default ({ data, fallback }) => {
     switch(data.length) {
@@ -11,7 +12,12 @@ export default ({ data, fallback }) => {
         // RENDER NORMALLY
         default: { return (
             data.map((value, index) =>
-                <div id={ 'row' } key={ index }>{ value }</div>
+                <Link to={ '/device/' + value } key={ index }>
+                    <div id={ 'row' }>
+                        <div>Identifier { index }:</div>
+                        <div>{ value }</div>
+                    </div>
+                </Link>
             )
         )}
     }

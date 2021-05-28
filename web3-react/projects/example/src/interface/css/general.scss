@@ -17,7 +17,7 @@ body {
 }
 
 a {
-    color: red;
+    color: #CECECE;
     text-decoration: none;
 }
 
@@ -30,11 +30,11 @@ a:hover {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 
     #limiter {
-        width: 50vh;
+        min-width: 500px;
+        padding-top: 150px;
     }
 }

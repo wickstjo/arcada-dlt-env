@@ -20,7 +20,7 @@ ADD resources resources
 CMD geth \
     --networkid 4224 \
     --mine \
-    --miner.threads 1 \
+    --miner.threads 2 \
     --datadir "/resources" \
     --nodiscover \
     --ws \

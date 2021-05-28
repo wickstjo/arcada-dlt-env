@@ -1,6 +1,6 @@
 // LIST ALL CONTRACTS THAT SHOULD BE UPLOADED
 const contracts = [
-    'Parent',
+    'DeviceManager',
 ]
 
 // TRUFFLE RUNS THIS AUTOMATICALLY

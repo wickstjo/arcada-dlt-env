@@ -1,0 +1,13 @@
+#footer {
+    padding-top: 10px;
+    text-align: center;
+
+    span {
+        color: rgb(174, 248, 166);
+    }
+
+    span:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

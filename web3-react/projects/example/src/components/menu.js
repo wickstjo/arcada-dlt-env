@@ -6,12 +6,12 @@ import '../interface/css/menu.scss';
 export default () => {
 
     // GLOBAL STATE
-    const { state, dispatch } = useContext(Context);
+    const { state } = useContext(Context);
 
     return (
         <div id={ 'menu' }>
             <Item
-                header={ 'List of Devices' }
+                header={ 'Your Device Collection' }
                 link={ '/devices' }
                 name={ 'devices' }
                 current={ state.page }
@@ -24,7 +24,7 @@ export default () => {
             />
             <Item
                 header={ 'View Device' }
-                link={ '/device/0x1dF62f291b2E969fB0849d99D9Ce41e2F137006e' }
+                link={ '/device/bad-identifier' }
                 name={ 'device' }
                 current={ state.page }
             />
@@ -32,8 +32,15 @@ export default () => {
     )
 }
 
-function Item({ header, link, name, current }) { return (
-    <Link to={ link }>
-        <li className={ name === current ? 'current' : null }>{ header }</li>
-    </Link>
-)}
+// MENU ITEM
+function Item({ header, link, name, current }) {
+
+    // NON-LINK
+    if (name === current) { return (
+        <li className={ 'current' }>{ header }</li>
+
+    // LINK
+    )} else { return (
+        <Link to={ link }><li>{ header }</li></Link>
+    )}
+}

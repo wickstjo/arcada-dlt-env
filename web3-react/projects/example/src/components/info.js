@@ -12,7 +12,7 @@ export default ({ data, valid, fallback }) => {
         default: {
             return Object.keys(data).map((key, index) =>
                 <div id={ 'row' } key={ index }>
-                    <div>{ key.charAt(0).toUpperCase() + key.slice(1) }:</div>
+                    <div>{ key }:</div>
                     <div>{ data[key] }</div>
                 </div>
             )

@@ -2,9 +2,8 @@ import React, { useContext, useReducer, useEffect } from 'react';
 import { Context } from '../assets/context';
 import reducer from '../states/local';
 import List from '../components/list';
-import '../interface/css/innerbody.scss';
 
-import { read, write, event } from '../funcs/blockchain';
+import { read } from '../funcs/blockchain';
 
 export default () => {
 
@@ -18,50 +17,33 @@ export default () => {
 
     // ON LOAD..
     useEffect(() => {
-        dispatch({
-            type: 'set-page',
-            payload: 'devices'
-        })
-
         const run = async() => {
 
-            const foo = await read({
-                contract: 'parent',
-                func: 'fetch_child',
-                args: ['foo']
+            // SET PAGE HEADER
+            dispatch({
+                type: 'set-page',
+                payload: 'devices'
+            })
+
+            // FETCH THE USER COLLECTION
+            const collection = await read({
+                contract: 'device_manager',
+                func: 'fetch_collection',
+                args: [state.keys.public]
             }, state)
 
-            console.log(foo)
+            // SAVE IT IN THE LOCAL STATE
+            set_local({
+                type: 'specific',
+                payload: {
+                    name: 'collection',
+                    data: collection
+                }
+            })
         }
 
-        // RUN THE ABOVE
+        // RUN ASYNCHRONOUSLY
         run()
-
-        // // SUBSCRIBE TO EVENTS IN THE CONTRACT
-        // const feed = event({
-        //     contract: 'oracle',
-        //     name: 'added'
-        // }, state)
-        
-        // // WHEN EVENT DATA IS INTERCEPTED
-        // feed.on('data', async() => {
-
-        //     // REFRESH DEVICE COLLECTION
-        //     set_local({
-        //         type: 'partial',
-        //         payload: {
-        //             collection: await read({
-        //                 contract: 'oracle',
-        //                 func: 'fetch_collection',
-        //                 args: [state.keys.public]
-        //             }, state)
-        //         }
-        //     })
-        // })
-
-        // // UNSUBSCRIBE ON UNMOUNT
-        // return () => { feed.unsubscribe(); }
-
     }, [])
 
     return (

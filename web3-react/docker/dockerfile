@@ -15,4 +15,4 @@ RUN npm install -g create-react-app
 WORKDIR /project
 
 # INSTALL & AUDIT DEPENDENCIES, THEN LAUNCH THE APP
-CMD npm install && npm audit fix && npm start
+CMD npm install && npm start

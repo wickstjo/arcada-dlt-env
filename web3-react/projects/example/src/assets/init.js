@@ -5,7 +5,7 @@ import { init } from '../funcs/blockchain';
 export default () => {
 
     // GLOBAL STATE
-    const { state, dispatch } = useContext(Context);
+    const { dispatch } = useContext(Context);
 
     // LOAD ONCE
     useEffect(() => {

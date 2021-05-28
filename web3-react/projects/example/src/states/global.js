@@ -7,6 +7,12 @@ const values = {
     // CURRENTLY VIEWED PAGE
     page: 'devices',
 
+    // REDIRECT PARAMS
+    redirect: {
+        status: false,
+        location: ''
+    },
+
     // BLOCKCHAIN PARAMS
     web3: null,
     contracts: null,
@@ -31,6 +37,24 @@ function reducer(state, { type, payload }) {
         case 'set-page': { return {
             ...state,
             page: payload
+        }}
+
+        // REDIRECT TO PAGE
+        case 'redirect': { return {
+            ...state,
+            redirect: {
+                status: true,
+                location: payload
+            }
+        }}
+
+        // RESET REDIRECT LOGIC
+        case 'reset-redirect': { return {
+            ...state,
+            redirect: {
+                status: false,
+                location: ''
+            }
         }}
 
         // FALLBACK

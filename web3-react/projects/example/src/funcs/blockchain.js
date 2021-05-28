@@ -14,14 +14,14 @@ async function init() {
         keys: keys,
         contracts: {
 
-            // CREATE THE PARENT CONTRACT
-            parent: new web3.eth.Contract(
-                references.parent.abi,
-                references.parent.address
+            // CONSTRUCT USABLE DEVICE MANAGER INSTANCE
+            device_manager: new web3.eth.Contract(
+                references.devicemanager.abi,
+                references.devicemanager.address
             ),
 
-            // CREATE AN OUTLINE OF THE CHILD CONTRACT
-            child: references.child.abi
+            // CREATE AN OUTLINE OF THE DEVICE CONTRACT
+            device: references.device.abi
         }
     }
 }

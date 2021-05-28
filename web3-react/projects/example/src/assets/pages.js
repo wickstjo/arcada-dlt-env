@@ -7,6 +7,8 @@ import Create from '../pages/create';
 import Device from '../pages/device';
 import Error from '../pages/error';
 
+import '../interface/css/innerbody.scss';
+
 export default () => {
 
     // GLOBAL STATE
@@ -19,7 +21,7 @@ export default () => {
             <Route exact path={ '/' } component={() => <Redirect to={ '/devices' } /> } />
             <Route exact path={ '/devices' } component={ Devices } />
             <Route exact path={ '/create' } component={ Create } />
-            <Route exact path={ '/device/:address' } component={ Device } />
+            <Route exact path={ '/device/:identifier' } component={ Device } />
             <Route component={ Error } />
         </Switch>
     
