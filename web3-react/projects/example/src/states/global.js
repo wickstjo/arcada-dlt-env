@@ -4,6 +4,9 @@ const values = {
     // INIT STATUS
     initialized: false,
 
+    // CURRENTLY VIEWED PAGE
+    page: 'devices',
+
     // BLOCKCHAIN PARAMS
     web3: null,
     contracts: null,
@@ -22,6 +25,12 @@ function reducer(state, { type, payload }) {
             ...state,
             ...payload,
             initialized: true
+        }}
+
+        // SET PAGE
+        case 'set-page': { return {
+            ...state,
+            page: payload
         }}
 
         // FALLBACK

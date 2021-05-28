@@ -1,7 +1,7 @@
 import React, { useContext, useReducer, useEffect } from 'react';
 import { Context } from '../assets/context';
 import reducer from '../states/local';
-import Swapper from '../components/swapper';
+import List from '../components/list';
 import '../interface/css/innerbody.scss';
 
 import { read, write, event } from '../funcs/blockchain';
@@ -9,15 +9,20 @@ import { read, write, event } from '../funcs/blockchain';
 export default () => {
 
     // GLOBAL STATE
-    const { state } = useContext(Context);
+    const { state, dispatch } = useContext(Context);
 
     // LOCAL STATE
     const [local, set_local] = useReducer(reducer, {
-        collection: ['foo', 'bar', 'biz']
+        collection: []
     })
 
     // ON LOAD..
     useEffect(() => {
+        dispatch({
+            type: 'set-page',
+            payload: 'devices'
+        })
+
         const run = async() => {
 
             const foo = await read({
@@ -59,21 +64,13 @@ export default () => {
 
     }, [])
 
-    // INSTANTIATE A NEW CHILD
-    function create() {
-        console.log('foo')
-    }
-
     return (
         <div id={ 'innerbody' }>
-            <div id={ 'header' }>
-                <div>List of Children</div>
-                <div onClick={ create }>Instantiate Child</div>
-            </div>
-            <div id={ 'outer' }>
-                <div id={ 'container' }>
-                    <Swapper data={ local.collection } />
-                </div>
+            <div id={ 'list' }>
+                <List
+                    data={ local.collection }
+                    fallback={ 'Your device collection is empty!' }
+                />
             </div>
         </div>
     )

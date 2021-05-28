@@ -1,15 +1,14 @@
 import React from 'react';
 
-// CONTENT SWAPPER
-export default ({ data }) => {
+export default ({ data, fallback }) => {
     switch(data.length) {
 
-        // IF THERE ARE NO ITEMS
+        // NO ITEMS FOUND, RENDER ERROR
         case 0: { return (
-            <div id={ 'row' }>No children found.</div>    
+            <div id={ 'error' }>{ fallback }</div>    
         )}
 
-        // BASELINE
+        // RENDER NORMALLY
         default: { return (
             data.map((value, index) =>
                 <div id={ 'row' } key={ index }>{ value }</div>

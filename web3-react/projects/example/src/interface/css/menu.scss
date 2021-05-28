@@ -1,0 +1,31 @@
+#menu {
+    text-shadow: 1px 1px #202020;
+    text-align: center;
+
+    a li {
+        background-color: rgba(0, 0, 0, 0);
+        display: inline-block;
+        padding: 10px;
+        color: #CECECE;
+        cursor: pointer;
+        text-shadow: 1px 1px #242424;
+        transition: color, transform;
+        transition: 0.2s, 0.2s;
+        //border-left: 1px solid rgba(185, 185, 185, 0.171);
+        //border-right: 1px solid rgba(48, 48, 48, 0.842);
+    }
+
+    a li:hover {
+        color: white;
+        transform: translate(0px, -5px);
+    }
+
+    a li.current {
+        color: rgb(174, 248, 166);
+    }
+
+    a li.current:hover {
+        transform: translate(0px, 0px);
+        cursor: default;
+    }
+}
