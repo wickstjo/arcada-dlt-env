@@ -1,0 +1,1 @@
+sudo cp ../truffle-contracts/projects/example/binary.json projects/example/resources/
