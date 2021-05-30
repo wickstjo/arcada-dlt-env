@@ -1,28 +1,16 @@
 ## Truffle Framework
-<p style="text-align: justify;">
-<a href="#">Truffle</a> is a framework that compiles and uploads <b>Ethereum Smart Contracts</b> to different blockchain environments. Running the container compiles and uploads the smart contracts from the specified project directory and creates a unified ABI file at the root. For a less systematic methodology, consider using <a href="https://remix.ethereum.org/">Remix</a>.
-</p>
+[Truffle](https://github.com/trufflesuite/truffle) is a framework that compiles and uploads **Ethereum Smart Contracts** to different blockchain environments. Running the container compiles and uploads the smart contracts from the specified project directory and creates a unified ABI file at the root. For a less systematic methodology, consider using [Remix](https://remix.ethereum.org/).
 
 ## Dependencies
-<p style="text-align: justify;">
-Before starting with this repository, make sure that you have a functional <a href="#">blockchain environment</a> running that Truffle can interact with.
-</p>
+Before starting with this repository, make sure that you have a functional [blockchain environment](https://github.com/wickstjo/arcada-dlt-env/tree/master/ganache-chain) running that Truffle can interact with.
 
 ## The Solidity Language
-<p style="text-align: justify;">
-The smart contracts for this repository are written in a programming language called <a href="#">Solidity</a>, which is very similar to <b>JavaScript</b>. Due to the intentional simplicity of smart contracts, solidity is very easy to comprehend for anyone with some kind of programming background. Regardless, if you’re more comfortable with <b>Lisp</b> or <b>Python</b>, smart contracts can also be written in <a href="#">LLL</a> or <a href="#">Vyper</a>.
-</p>
+The smart contracts for this repository are written in a programming language called [Solidity](https://github.com/ethereum/solidity), which is very similar to **JavaScript**. Due to the intentional simplicity of smart contracts, solidity is very easy to comprehend for anyone with some kind of programming background. Regardless, if you’re more comfortable with **Lisp** or **Python**, smart contracts can also be written in [LLL](https://lll-docs.readthedocs.io/en/latest/lll_introduction.html#:~:text=LLL%20is%20one%20of%20the,level%20language%20similar%20to%20Assembly.) or [Vyper](https://github.com/vyperlang/vyper).
 
 ## Truffle Configuration
-<p style="text-align: justify;">
-At the root of every project there needs to be a file called <a href="#">truffle-config.js</a> that functions as the process <b>instructions</b> for Truffle. Among other things, this file needs to accurately detail where the blockchain is hosted and what compiler version should be used.
-</p>
+At the root of every project there needs to be a file called [truffle-config.js](https://github.com/wickstjo/arcada-dlt-env/blob/master/truffle-contracts/projects/example/truffle-config.js) that functions as the process **instructions** for Truffle. Among other things, this file needs to accurately detail where the blockchain is hosted and what compiler version should be used.
 
 ## Post Processing
-<p style="text-align: justify;">
-When a smart contract is compiled, the compiler produces an <b>Application Binary Interface</b> (ABI) file which in this case is in JSON format. When a smart contract is uploaded to the blockchain, it is assigned a <b>permanent address</b>. To interact with a smart contract, you need an address and the corresponding ABI to know <b>where</b> the contract is, and <b>how</b> to interact with it.
-</p>
+When a smart contract is compiled, the compiler produces an **Application Binary Interface** (ABI) file which in this case is in JSON format. When a smart contract is uploaded to the blockchain, it is assigned a **permanent address**. To interact with a smart contract, you need an address and the corresponding ABI to know **where** the contract is, and **how** to interact with it.
 
-<p style="text-align: justify;">
-To streamline the usage of multi-contract projects, the <a href="#">clean-up.py</a> script is automatically run after compiling and uploading your smart contracts. The clean-up process essentially combines multiple ABI files into one as well as attaching assigned addresses to the corresponding ABI. The produced file is called the <a href="#">binary.json</a> and is placed at the project’s root directory. From there it can be distributed to frontend projects that need it.
-</p>
+To streamline the usage of multi-contract projects, the [clean-up.py](https://github.com/wickstjo/arcada-dlt-env/blob/master/truffle-contracts/docker/resources/clean-up.py) script is automatically run after compiling and uploading your smart contracts. The clean-up process essentially combines multiple ABI files into one as well as attaching assigned addresses to the corresponding ABI. The produced file is called the [binary.json](https://github.com/wickstjo/arcada-dlt-env/blob/master/truffle-contracts/projects/example/binary.json) and is placed at the project’s root directory. From there it can be distributed to frontend projects that need it.

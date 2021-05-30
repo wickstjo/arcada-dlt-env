@@ -1,12 +1,8 @@
 ## Ganache Blockchain
-<div style="text-align: justify;">
-<a href="#">Ganache</a> is a NodeJS-based <b>in-memory blockchain</b> that closely simulates the behaviour of a proper proof-of-work blockchain. While nothing can replace the real deal, this is an excellent tool <b>for learning</b> how the technology works and to experiment with concepts on a smaller scale before transitioning to a Geth-based blockchain. Transactions do not have an associated amount of mining work required, so there is virtually <b>no downtime or latency</b>.
-</div>
+[Ganache](https://github.com/trufflesuite/ganache-cli) is a NodeJS-based **in-memory blockchain** that closely simulates the behaviour of a proper proof-of-work blockchain. While nothing can replace the real deal, this is an excellent tool **for learning** how the technology works and to experiment with concepts on a smaller scale before transitioning to a [Geth Blockchain](https://github.com/wickstjo/arcada-dlt-env/tree/master/geth-chain). Transactions do not have an associated amount of mining work required, so there is virtually **no downtime or latency**.
 
 ## Accounts
-<p style="text-align: justify;">
-By default, ganache generates ten new random accounts every time the process is launched, but since we’re passing the <b>--deterministic</b> flag in the <a href="#">dockerfile</a>, the following ten <b>public and private keys</b> will always be generated with 100 ETH each:
-</p>
+By default, ganache generates ten new random accounts every time the process is launched, but since we’re passing the **--deterministic** flag in the [Dockerfile](https://github.com/wickstjo/arcada-dlt-env/blob/master/geth-chain/docker/dockerfile), the following ten **public and private keys** will always be generated with **100 ETH** each:
 
 ##### Public Keys:
 ```
