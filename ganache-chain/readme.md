@@ -1,7 +1,7 @@
 ## Ganache Blockchain
-<p style="text-align: justify;">
+<div style="text-align: justify;">
 <a href="#">Ganache</a> is a NodeJS-based <b>in-memory blockchain</b> that closely simulates the behaviour of a proper proof-of-work blockchain. While nothing can replace the real deal, this is an excellent tool <b>for learning</b> how the technology works and to experiment with concepts on a smaller scale before transitioning to a Geth-based blockchain. Transactions do not have an associated amount of mining work required, so there is virtually <b>no downtime or latency</b>.
-</p>
+</div>
 
 ## Accounts
 <p style="text-align: justify;">
