@@ -3,6 +3,8 @@
 
 Due to the clunkiness of the node package manager, you need to specify which project directory you want the docker container to mount in the [settings.conf](https://github.com/wickstjo/arcada-dlt-env/blob/master/web3-react/settings.conf) file. Since we’re creating a dynamic development environment, project specific modules cannot be pre-installed when the docker container is built, and we instead have to do it every time we run the container. If this becomes too annoying, consider installing this environment on your machine instead.
 
+By default, your web application will be available on **Port 3000**.
+
 ## Dependencies
 Before starting with this repository, make sure that you have a functional [blockchain environment](https://github.com/wickstjo/arcada-dlt-env/tree/master/ganache-chain) running, and that you've compiled and uploaded the relevant [smart contracts](https://github.com/wickstjo/arcada-dlt-env/tree/master/truffle-contracts) there. Once that is done, run the [fetch-binary.sh](https://github.com/wickstjo/arcada-dlt-env/blob/master/web3-react/fetch-binary.sh) script to copy over the produced [binary.json](https://github.com/wickstjo/arcada-dlt-env/blob/master/truffle-contracts/projects/example/binary.json) file to the example directory.
 

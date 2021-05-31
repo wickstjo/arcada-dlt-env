@@ -1,11 +1,15 @@
 ## Geth Blockchain
-[Geth](https://geth.ethereum.org/) (Go-Ethereum) is the client that all Ethereum nodes use to interact with numerous available blockchains. With this tool, you can synchronize and use any main- or testnet, but also instantiate and run your own private blockchain that works the same way the Ethereum mainnet does. This means that transactions need to be mined which can sometimes take a while. For development purposes, you might want to create a [Ganache-chain](https://github.com/wickstjo/arcada-dlt-env/tree/master/ganache-chain) instead since transaction have virtually no downtime or latency.
+[Geth](https://geth.ethereum.org/) (Go-Ethereum) is the client that all Ethereum nodes use to interact with numerous available blockchains. With this tool, you can synchronize and use any **main- or testnet**, but also instantiate and run your own **private blockchain** that works the same way the Ethereum mainnet does. This means that transactions **need to be mined** which can sometimes take a while. For development purposes, you might want to create a [Ganache-chain](https://github.com/wickstjo/arcada-dlt-env/tree/master/ganache-chain) instead since transaction have virtually no downtime or latency.
+
+By default, your blockchain will be available on **Port 8545**.
 
 ## Resources and Initial Boot
-The docker container copies over the source files of a pre-built private blockchain located in the [resources directory](https://github.com/wickstjo/arcada-dlt-env/tree/master/geth-chain/docker/resources) but they can also be replaced with your own source files. When the blockchain is first booted, I would advise you to wait until the client finishes **generating a DAG** which is when the message stops being spammed in the terminal.
+The docker container copies over the source files of a pre-built private blockchain located in the [resources directory](https://github.com/wickstjo/arcada-dlt-env/tree/master/geth-chain/docker/resources) but they can also be replaced with your own source files. [This video](https://www.youtube.com/watch?v=A5V2jdLi5mI) details how you can do that.  When the blockchain is first booted, I would advise you to wait until the client finishes **generating a DAG** which is when the message stops being spammed in the terminal.
 
-## Accounts
-With Geth, **keypairs** are derived from an **encrypted key-file**. The key-files for each of the below listed public- and private keys can be found in the [keystore directory](https://github.com/wickstjo/arcada-dlt-env/tree/master/geth-chain/docker/resources/keystore). To create more accounts, you need to use the geth console while inside the container. To serialize usable keypairs from the keystore directory, you can use the [serialize_keystore.py](https://github.com/wickstjo/arcada-dlt-env/blob/master/geth-chain/docker/resources/serialize_keystore.py) script.
+## Public- and Private Keys
+As the name implies, the public key is your public identity on the blockchain network. To create **transactions** for that public key, you need to know the corresponding private key for the encryption process that will be detailed in the [web3 examples](https://github.com/wickstjo/arcada-dlt-env/tree/master/web3-notebooks).
+
+With Geth, **keypairs** are derived from an **encrypted key-file**. The key-files for each of the below listed public- and private keys can be found in the [keystore directory](https://github.com/wickstjo/arcada-dlt-env/tree/master/geth-chain/docker/resources/keystore). To create more accounts, you need to use the geth console while inside the container. To serialize usable keypairs from the keystore, you can use the [serialize_keystore.py](https://github.com/wickstjo/arcada-dlt-env/blob/master/geth-chain/docker/resources/serialize_keystore.py) script.
 
 **Public Keys:**
 ```
