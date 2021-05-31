@@ -1,12 +1,14 @@
 ## Web3.js with React (JavaScript)
 [React](https://reactjs.org/) is a JavaScript framework that is developed and maintained by Facebook. It is intended for web applications, but there are daughter frameworks like [Electron](https://github.com/electron/electron) and [React Native](https://github.com/facebook/react-native) that can be used to create desktop and mobile applications respectively.
 
-Due to the clunkiness of the node package manager, you need to specify which project directory you want the docker container to mount in the [settings.conf](https://github.com/wickstjo/arcada-dlt-env/blob/master/web3-react/settings.conf) file. Since we’re creating a dynamic development environment, project specific modules cannot be pre-installed when the docker container is built, and we instead have to do it every time we run the container. If this becomes too annoying, consider installing this environment on your machine instead.
-
 By default, your web application will be available on **Port 3000**.
 
 ## Dependencies
 Before starting with this repository, make sure that you have a functional [blockchain environment](https://github.com/wickstjo/arcada-dlt-env/tree/master/ganache-chain) running, and that you've compiled and uploaded the relevant [smart contracts](https://github.com/wickstjo/arcada-dlt-env/tree/master/truffle-contracts) there. Once that is done, run the [fetch-binary.sh](https://github.com/wickstjo/arcada-dlt-env/blob/master/web3-react/fetch-binary.sh) script to copy over the produced [binary.json](https://github.com/wickstjo/arcada-dlt-env/blob/master/truffle-contracts/projects/example/binary.json) file to the example directory.
+
+## Dynamic Assets
+Since React applications have individual NodeJS dependencies that need to be installed, you can only mount one project directory per runtime. For example, to mount the [/projects/example/](https://github.com/wickstjo/arcada-dlt-env/blob/master/web3-react/projects/example) directory, pass “example” as an argument to the run script like this:
+> ./run example
 
 ## Web3 Library
 [The Web3 library](https://web3js.readthedocs.io/en/v1.3.4/) is what allows the JavaScript application to communicate with blockchain smart contracts through a gateway. It comes automatically installed with the container. However, many of the library methods are quite convoluted, particularly for beginners, so I wrote the [blockchain.js](https://github.com/wickstjo/arcada-dlt-env/blob/master/web3-react/projects/example/src/funcs/blockchain.js) file to clarify the process of serializing a smart contract instance as well as reading existing and writing new data to the blockchain.

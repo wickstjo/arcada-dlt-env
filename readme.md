@@ -5,12 +5,13 @@ This repository contains a number of useful **Docker environments** for developi
 The only dependency for any of these environments is [Docker](https://www.docker.com/).
 
 ## Container Management
-Each subdirectory has a **build** and **run** shell file that can be used to create and launch (respectively) a container with recommended settings. For ease-of-use, the containers launch in **interactive mode** and use **port masking** that makes each environment available through the host machine's port.
+Each subdirectory has a **build** and **run** shell file that can be used to create and launch (respectively) a container with recommended settings. For ease-of-use, the containers launch in **interactive mode** and use **port masking** which makes the container’s environment available through the host machine's port. If you wish to run a container as a background process, modify the **run script** accordingly.
 
-Due to Docker’s non-permanent nature, when a project has **dynamic assets** like Jupyter Notebooks, the container will mount a **virtual directory** instead. The docker container will then have access to an external directory, and the progress you make will not be lost once the container is terminated.
+When a container requires **dynamic assets** to function, the container will mount a **virtual directory** from the host machine's file system. The container will then have access to an external directory, and the progress you make whilst inside the container environment will not be lost once the container is terminated. When this feature is necessary, the mounted directory must be passed as an **argument to the run script** like this:
+> ./run example-directory
 
 ## Example Projects
-Since many of the example projects **build upon each other** and simply don’t work unless a previous step has been fulfilled, I advise you to complete them in the below listed order. If a step has multiple options, only one of them needs to be completed and the simplest option is marked as such. The next example project **assumes that you only completed the simplest option** for the previous step.
+Since the example projects **build upon each other** and simply don’t work unless a previous step has been fulfilled, I advise you to complete them in the below listed order. If a step has multiple options, only one of them needs to be completed and the simplest option is marked as such. The next example project **assumes that you only completed the simplest option** for the previous step.
 
 **Step 1: Set up your own development blockchain**
 - [ganache-chain/](https://github.com/wickstjo/arcada-dlt-env/tree/master/ganache-chain) (simple)

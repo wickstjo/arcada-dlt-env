@@ -1,22 +1,31 @@
 module.exports = {
+
+    // BLOCKCHAIN SETTINGS
     networks: {
         development: {
-            host: '127.0.0.1',          // YOUR
-            port: 8545,                 // GATEWAY
+            host: '127.0.0.1',
+            port: 8545,
             network_id: "*",
-            gas: 5000000,               // MAX GAS USAGE FOR UPLOAD
-            websockets: true            // ENABLE WEBSOCKET UPLOAD
+            gas: 5000000,
+            websockets: true
         }
     },
+
+    // COMPILER SETTINGS
     compilers: {
         solc: {
-            version: "^0.8.4",           // THE SOLIDITY COMPILER
+            version: "^0.8.4",
             settings: {
                 optimizer: {
-                    enabled: true,      // DEFAULT: FALSE
-                    runs: 200           // DEFAULT: 200
+                    enabled: true,
+                    runs: 200
                 }
             }
         }
-    }
+    },
+
+    // CONTRACTS TO UPLOAD
+    contracts: [
+        'DeviceManager',
+    ]
 }

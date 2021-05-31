@@ -1,5 +1,14 @@
-# IMPORT SETTINGS
-source settings.conf
+# CONTAINER NAME
+CONTAINER_NAME="truffle-contracts"
 
-# RUN CONTAINER
-clear && sudo docker run -t --network host -v `pwd`/projects/${PROJECT_DIR}:/project ${CONTAINER_NAME}
+# CHECK IF AN ARGUMENT WAS PASSED
+if [ -z "$1" ]
+
+    # PRINT ERROR
+    then
+        clear && echo "Error: You need to supply a project directory to mount."
+    
+    # RUN CONTAINER & MOUNT DIR
+    else
+        clear && sudo docker run -t --network host -v `pwd`/projects/$1:/project ${CONTAINER_NAME}
+fi
